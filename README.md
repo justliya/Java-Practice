@@ -6,6 +6,7 @@
 - [Data Types and Variables](#data-types-and-variables)
 - [Constants and Best Practices](#constants-and-best-practices)
 - [Methods](#methods)
+- [Reflection: Encapsulation, Data Hiding, and Modular Methods in Teamwork](#reflection-encapsulation-data-hiding-and-modular-methods-in-teamwork)
 
 ---
 
@@ -79,3 +80,11 @@ Why modularization is best practice:
 	•	Supports teamwork (each method does one job well)
 	•	Keeps code simple, readable, and maintainable
 
+---
+
+## Reflection: Encapsulation, Data Hiding, and Modular Methods in Teamwork
+Encapsulation, data hiding, and modular methods all create a structure that makes collaboration smoother and code safer in software projects.
+
+- **Encapsulation** bundles fields and methods together inside classes, so a developer working on one class doesn’t need to worry about the internal details of another. This prevents accidental interference and allows teammates to focus on their own modules.
+- **Data hiding** (through private fields and controlled access methods) prevents unauthorized or unintended changes. If every teammate can directly edit shared variables, bugs and inconsistencies spread quickly. With hidden data, the program only changes in predictable ways, reducing errors and making debugging easier.
+- **Modular methods** break large tasks into smaller, reusable pieces. In a team, this means developers can divide responsibilities—one person writes input methods, another handles calculations, another manages display. Each piece can be tested independently, which speeds up debugging and integration.
