@@ -56,29 +56,28 @@ Because Java knows the exact type at **compile time**, the compiler can:
 **Example in Java:**  
 ```java
 final double CLOTHES_DISCOUNT = 0.20;
+```
 
-Advantages:
-	•	Defined once, used everywhere
-	•	Changing it updates all references
-	•	Prevents accidental changes
-	•	Makes the program self-explanatory
+**Advantages:**
+- Defined once, used everywhere
+- Changing it updates all references
+- Prevents accidental changes
+- Makes the program self-explanatory
 
-⸻
+## Methods
 
-Methods
+**A method declaration includes:**
+- Access specifier → public, private
+- Return type → int, double, void, etc.
+- Method name → describes its purpose
+- Parameters → inputs the method needs
+- Body → statements that define the behavior
 
-A method declaration includes:
-	•	Access specifier → public, private
-	•	Return type → int, double, void, etc.
-	•	Method name → describes its purpose
-	•	Parameters → inputs the method needs
-	•	Body → statements that define the behavior
-
-Why modularization is best practice:
-	•	Breaks programs into smaller, reusable, and testable pieces
-	•	Improves clarity and debugging
-	•	Supports teamwork (each method does one job well)
-	•	Keeps code simple, readable, and maintainable
+**Why modularization is best practice:**
+- Breaks programs into smaller, reusable, and testable pieces
+- Improves clarity and debugging
+- Supports teamwork (each method does one job well)
+- Keeps code simple, readable, and maintainable
 
 ---
 
