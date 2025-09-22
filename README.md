@@ -7,6 +7,7 @@
 - [Constants and Best Practices](#constants-and-best-practices)
 - [Methods](#methods)
 - [Reflection: Encapsulation, Data Hiding, and Modular Methods in Teamwork](#reflection-encapsulation-data-hiding-and-modular-methods-in-teamwork)
+- [Chapter 4: Using Classes and Objects](#chapter-4-using-classes-and-objects)
 
 ---
 
@@ -87,3 +88,129 @@ Encapsulation, data hiding, and modular methods all create a structure that make
 - **Encapsulation** bundles fields and methods together inside classes, so a developer working on one class doesn’t need to worry about the internal details of another. This prevents accidental interference and allows teammates to focus on their own modules.
 - **Data hiding** (through private fields and controlled access methods) prevents unauthorized or unintended changes. If every teammate can directly edit shared variables, bugs and inconsistencies spread quickly. With hidden data, the program only changes in predictable ways, reducing errors and making debugging easier.
 - **Modular methods** break large tasks into smaller, reusable pieces. In a team, this means developers can divide responsibilities—one person writes input methods, another handles calculations, another manages display. Each piece can be tested independently, which speeds up debugging and integration.
+
+---
+
+## Visual: Information Hiding Diagram
+
+```
++------------------------------+
+|          Employee            |
++------------------------------+
+|  - empNum   (private)        |
+|  - name     (private)        |
++------------------------------+
+|  + getEmpNum()   (public)    |
+|  + setEmpNum()   (public)    |
+|  + getName()     (public)    |
+|  + setName()     (public)    |
++------------------------------+
+```
+
+- `-` = private (hidden inside the class)  
+- `+` = public (accessible outside the class)  
+
+### How it works
+- Outside code cannot directly touch `empNum` or `name`.  
+- It must go through public methods (`getEmpNum`, `setEmpNum`, etc.).  
+- Those methods can enforce rules (e.g., no negative employee numbers).  
+
+
+### Analogy
+Think of the class as a **bank vault**:  
+- The money (`empNum`, `name`) is **locked inside** (`private`).  
+- You interact with the vault only through **tellers (methods)**, who follow strict rules.  
+
+---
+
+## Chapter 4: Using Classes and Objects
+
+**Important Concepts**
+
+- **Classes and Objects**: A class is a blueprint; an object is an instance created from it.
+  ```
+  class Laptop { 
+      String brand; 
+      int storage; 
+  }
+  Laptop myLaptop = new Laptop();
+  ```
+
+- **Creating a Class**: Classes contain fields (attributes) and methods (behaviors).
+  ```
+  public class Car {
+      String make;
+      int year;
+      void honk() {
+          System.out.println("Beep!");
+      }
+  }
+  ```
+
+- **Instance Methods**: Require an object to be called; operate on instance fields.
+  ```
+  Car myCar = new Car();
+  myCar.honk();  // calls instance method
+  ```
+
+- **Declaring Objects**: Use the `new` keyword and dot operator to create and access objects.
+  ```
+  Car car1 = new Car();
+  car1.make = "Toyota";
+  ```
+
+- **Classes as Data Types**: User-defined classes act as new data types.
+  ```
+  Book myBook = new Book();
+  ```
+
+- **Constructors**: Special methods used to initialize objects. Can be default (no parameters) or parameterized. Can also be overloaded.
+  ```
+  public class Book {
+      String title;
+      Book(String t) {
+          title = t;
+      }
+  }
+  Book b1 = new Book("Anne of Green Gables");
+  ```
+
+- **this Reference**: Refers to the current object; used to differentiate fields from parameters and for constructor chaining.
+  ```
+  public class Student {
+      String name;
+      Student(String name) {
+          this.name = name;
+      }
+  }
+  ```
+
+- **Static Fields and Methods**: Belong to the class, not individual objects. Shared across all instances (e.g., `Math.PI`).
+  ```
+  System.out.println(Math.PI);  // static field
+  ```
+
+- **Imported Constants and Methods**: Java API classes (e.g., `Math`, `Scanner`) provide reusable constants and methods.
+  ```
+  import java.util.Scanner;
+  Scanner sc = new Scanner(System.in);
+  ```
+
+- **Composition**: A class containing objects of another class.
+  ```
+  class Engine { }
+  class Car {
+      Engine engine = new Engine();
+  }
+  ```
+
+- **Nested Classes**: Classes defined inside another class to logically group functionality.
+  ```
+  class Outer {
+      class Inner {
+          void display() {
+              System.out.println("Nested class");
+          }
+      }
+  }
+  ```
